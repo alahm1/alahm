@@ -216,3 +216,45 @@ FROM
 
 
 
+```sql
+/*
+# 1. Create a view to store the transformed data
+# 2. Cast the extracted channel name as VARCHAR(100)
+# 3. Select the required columns from the us_youtubers_2024 SQL table 
+*/
+
+-- 1.
+CREATE VIEW us_youtubers_2024 AS
+
+-- 2.
+SELECT
+    CAST(SUBSTRING(NOMBRE, 1, CHARINDEX('@', NAME) - 1) AS VARCHAR(100)) AS channel_name, -- 2.
+    total_subscribers,
+    total_views,
+    total_videos
+
+-- 3.
+FROM
+    us_youtubers_2024;
+```
+
+
+# Testing
+
+- What data quality and validation checks are you going to create?
+
+Here are the data quality tests conducted:
+
+## Row count check
+
+/*
+# Count the total number of records (or rows) are in the SQL view
+*/
+
+```sql
+SELECT
+    COUNT(*) AS no_of_rows
+FROM
+    view_uk_youtubers_2024;
+```
+
