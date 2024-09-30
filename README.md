@@ -111,7 +111,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 
 
-![Dashboard-Mockup](assets/images/dashboard_mockup.png.png)
+![Dashboard-Mockup](assets/images/dashboard_mockup.png)
 
 
 
@@ -155,5 +155,64 @@ This is the stage where you have a scan of what's in the data, errors, inconcsis
 2. The first column contains channel IDs, which are separated by an @ symbol—we need to extract the channel names from this.
 3. Some of the cells and header names are in a different language. We need to confirm if these columns are necessary, and if so, we need to address them.
 4. We have more data than we need, so some of these columns will need to be removed.
+
+
+## Data Cleaning
+
+- What do we expect the clean data to look like?  (What should it contain? What contraints should we apply to it?)
+
+The aim is to refine our dataset to ensure it is structured and ready for analysis. 
+
+The cleaned data should meet the following criteria and constraints:
+
+- Only relevant columns should be retained.
+- All data types should be appropriate for the contents of each column.
+- No column should contain null values, indicating complete data for all records.
+
+Below is a table outlining the constraints on our cleaned dataset:
+
+| Property         | Description |
+|------------------|-------------|
+| Number of Rows   | 100         |
+| Number of Columns | 4           |
+
+Here is a tabular representation of the expected schema for the clean data:
+
+| Column Name        | Data Type | Nullable |
+|--------------------|-----------|----------|
+| channel_name       | VARCHAR   | NO       |
+| total_subscribers   | INTEGER   | NO       |
+| total_views        | INTEGER   | NO       |
+| total_videos       | INTEGER   | NO       |
+
+- What steps are needed to clean and shape the data into the desired format?
+
+1. Remove unnecessary columns by only selecting the ones you need.
+2. Extract YouTube channel names from the first column.
+3. Rename columns using aliases.
+
+
+
+
+
+### Transform the data
+
+```sql
+/*
+# 1. Select the required columns
+# 2. Extract the channel name from the 'NAME' column
+*/
+
+-- 1.
+
+SELECT 
+    CAST(SUBSTRING(NAME, 1, CHARINDEX('@', NAME) - 1) AS VARCHAR(100)) AS channel_name,
+    total_subscribers,
+    total_views,
+    total_videos
+FROM
+    us_youtubers_2024;
+```
+
 
 
