@@ -258,7 +258,6 @@ FROM
 ### Output
 ![row_count_check](assets/images/row_count_check.png)
 
-
 ## Column count check
 
 ### SQL query
@@ -339,7 +338,7 @@ HAVING
 ## Results
 
 - What does the dashboard look like?
-![us_youtubers_2024](assets/images/us_youtubers_2024.png)
+![us_youtubers_2024](assets/images/us_youtubers_2024.gif)
 
 
 
@@ -773,7 +772,7 @@ We discovered that
 
 ## Recommendations
 
-- What do you recommend based on the insights gathered?
+ - What do you recommend based on the insights gathered?
 
 1. Austin Evans is the best YouTube channel to collaborate with for maximizing visibility, as this channel has both a high subscriber count and consistently high average views per video, offering strong reach and engagement potential.
 2. Although Nikias Molina and TecH College are frequent content creators, their lower average views per video suggest that investing in collaborations with them may not offer the best return on investment.
@@ -784,7 +783,7 @@ The top 3 channels to form collaborations with are Austin Evans, iJustine, and K
 
 ## Potential ROI
 
-- What ROI do we expect if we take this course of action?
+ - What ROI do we expect if we take this course of action?
 
 1. A product placement campaign with Austin Evans could yield a net profit of $117,524 per video, offering excellent returns for high-exposure campaigns.
 2. Collaborating with iJustine for influencer marketing could result in a net profit of $94,507 per video, making this another valuable option for maximizing reach.
@@ -792,17 +791,17 @@ The top 3 channels to form collaborations with are Austin Evans, iJustine, and K
 
 ## Action plan
 
-- What course of action should we take and why?
+ - What course of action should we take and why?
 
 Based on our analysis, we recommend moving forward with a long-term partnership deal with Austin Evans to promote the client's products, as this channel offers the highest potential visibility and ROI.
 
 We'll keep iJustine and KenTT as secondary options to target specific audiences, focusing on high engagement and consistent reach.
 
-- What steps do we take to implement the recommended decisions effectively?
+ - What steps do we take to implement the recommended decisions effectively?
 
-1. Reach out to the teams behind Austin Evans, iJustine, and KenTT to initiate partnership discussions.
-2. Negotiate contracts within the allocated budget for each campaign and finalize details.
-3. Launch the campaigns, track their performance using agreed-upon KPIs, and monitor conversions closely.
+a. Reach out to the teams behind Austin Evans, iJustine, and KenTT to initiate partnership discussions.
+b. Negotiate contracts within the allocated budget for each campaign and finalize details.
+c. Launch the campaigns, track their performance using agreed-upon KPIs, and monitor conversions closely.
 
 
 
