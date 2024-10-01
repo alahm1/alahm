@@ -1,4 +1,4 @@
-# Data Portfolio: Python to Power BI 
+## Data Portfolio: Python to Power BI 
 
 
 ![python-sql-powerbi](assets/images/python-sql-powerbi.png)
