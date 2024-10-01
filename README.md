@@ -174,14 +174,14 @@ Below is a table outlining the constraints on our cleaned dataset:
 | Property         | Description |
 |------------------|-------------|
 | Number of Rows   | 100         |
-| Number of Columns | 4           |
+| Number of Columns | 4          |
 
 Here is a tabular representation of the expected schema for the clean data:
 
 | Column Name        | Data Type | Nullable |
 |--------------------|-----------|----------|
 | channel_name       | VARCHAR   | NO       |
-| total_subscribers   | INTEGER   | NO       |
+| total_subscribers  | INTEGER   | NO       |
 | total_views        | INTEGER   | NO       |
 | total_videos       | INTEGER   | NO       |
 
@@ -256,5 +256,109 @@ SELECT
     COUNT(*) AS no_of_rows
 FROM
     view_uk_youtubers_2024;
+```
+### Output
+![row_count_check](assets/images/row_count_check.png)
+
+
+## Column count check
+
+### SQL query
+
+
+```sql
+/* 
+# Count the total number of columns (or fields) are in the SQL view
+*/
+
+SELECT 
+	COUNT(*) as column_count
+FROM
+	INFORMATION_SCHEMA.COLUMNS
+WHERE
+	TABLE_NAME = 'view_us_youtubers_2024'
+
+```
+
+### Output
+![column_count_check](assets/images/column_count_check.png)
+
+
+## Data type check
+
+
+### SQL query
+
+```sql
+/*
+# Check the data types of each column from the view by checking the INFORMATION SCHEMA view
+*/
+SELECT 
+	COLUMN_NAME, DATA_TYPE
+FROM
+	INFORMATION_SCHEMA.COLUMNS
+WHERE
+	TABLE_NAME = 'view_us_youtubers_2024'
+```
+
+
+### Output
+![data_type_check](assets/images/data_type_check.png)
+
+
+
+
+## Duplicate count check
+
+
+### SQL query
+
+```sql
+/*
+# 1. Check for duplicate rows in the view
+# 2. Group by the channel name
+# 3. Filter for groups with more than one row
+*/
+
+SELECT 
+	channel_name,
+	COUNT(*) as duplicate_count 
+FROM 
+	view_us_youtubers_2024
+GROUP BY
+	channel_name
+HAVING
+	COUNT(*) > 1
+```
+
+
+### Output
+![duplicate_check](assets/images/duplicate_check.png)
+
+
+
+# Visualization
+
+
+## Results
+
+- What does the dashboard look like?
+![us_youtubers_2024](assets/images/us_youtubers_2024.png)
+
+
+
+
+## DAX Measures
+
+
+### 1. Total Subscribers (M)
+
+```dax
+Total Subscribers (M) = 
+VAR million = 1000000
+VAR sumOfSubscribers = SUM(view_us_youtubers[total_subscribers])
+VAR totalSubscribers = DIVIDE(sumOfSubscribers, million)
+
+RETURN totalSubscribers
 ```
 
