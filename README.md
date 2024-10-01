@@ -193,8 +193,6 @@ Here is a tabular representation of the expected schema for the clean data:
 
 
 
-
-
 ### Transform the data
 
 ```sql
@@ -248,7 +246,7 @@ Here are the data quality tests conducted:
 ## Row count check
 
 /*
-# Count the total number of records (or rows) are in the SQL view
+### Count the total number of records (or rows) are in the SQL view
 */
 
 ```sql
@@ -304,8 +302,6 @@ WHERE
 
 ### Output
 ![data_type_check](assets/images/data_type_check.png)
-
-
 
 
 ## Duplicate count check
@@ -419,7 +415,7 @@ RETURN viewsPerSubscriber
 
 - What did we find?
 
-For this analysis, we're going to focus on the questions below to get the information we need for our marketing client -
+For this analysis, we're going to focus on the questions below to get the information we need for our marketing client
 
 Here are the key questions we need to answer for our marketing client:
 
@@ -431,7 +427,7 @@ Which 3 channels have the highest views per subscriber ratio?
 Which 3 channels have the highest subscriber engagement rate per video uploaded?
 
 
-### Who are the top 10 YouTubers with the most subscribers?
+### 1. Who are the top 10 YouTubers with the most subscribers?
 
 
 | Rank | Channel Name     | Subscribers (M) |
@@ -448,7 +444,7 @@ Which 3 channels have the highest subscriber engagement rate per video uploaded?
 | 10   | Pocketnow        | 1.82M            |
 
 
-### Which 3 channels have uploaded the most videos?
+### 2.Which 3 channels have uploaded the most videos?
 
 | Rank | Channel Name     | Videos Uploaded    |
 |------|------------------|--------------------|
@@ -457,7 +453,7 @@ Which 3 channels have the highest subscriber engagement rate per video uploaded?
 | 3    | Pocketnow         | 7,972             |
 
 
-### Which 3 channels have the most views?
+### 3. Which 3 channels have the most views?
 
 | Rank | Channel Name     | Total Views (B)     |
 |------|------------------|---------------------|
@@ -466,7 +462,7 @@ Which 3 channels have the highest subscriber engagement rate per video uploaded?
 | 3    | TechSource        | 0.813              |
 
 
-### Which 3 channels have the highest average views per video?
+### 4. Which 3 channels have the highest average views per video?
 
 | Channel Name      | Average Views per Video (M)    |
 |--------------------|------------------------------ |
@@ -493,7 +489,7 @@ Which 3 channels have the highest subscriber engagement rate per video uploaded?
 | 3    | Moment              | 18,095.24 		    |
 
 
-# Notes
+#### Notes
 
 For this analysis, we'll prioritize analysing the metrics that are important in generating the expected ROI for our marketing client, which are the YouTube channels wuth the most
 
@@ -509,18 +505,16 @@ For this analysis, we'll prioritize analysing the metrics that are important in 
 
 Campaign idea = product placement
 
-
-
-1. Justine
+a. Justine
    
--Average views per video: 572,540
+- Average views per video: 572,540
 - Product cost: $10
 - Potential units sold per video: 572,540 x 2% conversion rate = 11,450.8 units sold
 - Potential revenue per video: 11,450.8 x $10 = $114,508
 - Campaign cost (one-time fee): $20,000
 - **Net profit: $114,508 - $20,000 = $94,508**
 
-2. Austin Evans
+b. Austin Evans
   
 - Average views per video: 687,620
 - Product cost: $10
@@ -529,7 +523,7 @@ Campaign idea = product placement
 - Campaign cost (one-time fee): $20,000
 - **Net profit: $137,524 - $20,000 = $117,524**
 
-3. NetworkChuck
+c. NetworkChuck
 - Average views per video: 630,010
 - Product cost: $10
 - Potential units sold per video: 630,010 x 2% conversion rate = 12,600.2 units sold
@@ -596,7 +590,7 @@ total_subscribers desc
 
 
 ### 2. Youtubers with the most videos uploaded
-\
+
 ### Calculation breakdown
 
 Campaign idea = sponsored video series
@@ -627,7 +621,7 @@ Campaign idea = sponsored video series
 
 Best Option rom category : Pocketnow (Lowest loss: -$439)
 
-# SQL query
+#### SQL query
 
 ```sql
 /*
@@ -691,25 +685,25 @@ Campaign Idea: Influencer marketing
 - Potential units sold per video: 13,752
 - Potential revenue per video: $137,524
 - Campaign cost: $20,000
-- Net profit: $117,524
+- **Net profit: $117,524**
   
 2. iJustine
 - Average views per video: 572,537
 - Potential units sold per video: 11,451
 - Potential revenue per video: $114,507
 - Campaign cost: $20,000
-- Net profit: $94,507
+- **Net profit: $94,507**
   
 3. TechSource
 - Average views per video: 477,699
 - Potential units sold per video: 9,554
 - Potential revenue per video: $95,540
 - Campaign cost: $20,000
-- Net profit: $75,540
+- **Net profit: $75,540**
 
 Best Option: Austin Evans (Highest net profit: $117,524)
 
-# SQL query
+#### SQL query
 ```sql
 /*
 
@@ -760,5 +754,56 @@ total_subscribers desc
 
 #### Output
 ![youtubers_with_the_most_views](assets/images/youtubers_with_the_most_views.png)
+
+
+
+
+
+## Discovery
+- What did we learn?
+  
+We discovered that
+
+1. iJustine, Austin Evans, and NetworkChuck are the channels with the most subscribers in our dataset.
+2. Nikias Molina, TecH College, and Pocketnow are the channels with the most videos uploaded.
+3. Austin Evans, iJustine, and TechSource are the channels with the most views.
+4. Channels with large subscriber bases like iJustine and Austin Evans consistently generate high views, making them strong candidates for brand exposure.
+5. While some channels like Nikias Molina upload content frequently, they have lower average views per video, suggesting that volume doesn't always correlate with higher reach.
+6. Channels like KenTT have high subscriber engagement per video uploaded, indicating a loyal and active follower base, even if they have fewer views overall.
+
+## Recommendations
+
+- What do you recommend based on the insights gathered?
+
+1. Austin Evans is the best YouTube channel to collaborate with for maximizing visibility, as this channel has both a high subscriber count and consistently high average views per video, offering strong reach and engagement potential.
+2. Although Nikias Molina and TecH College are frequent content creators, their lower average views per video suggest that investing in collaborations with them may not offer the best return on investment.
+3. Channels like KenTT, with high engagement rates, should be considered for campaigns targeting loyal, active audiences, especially if maintaining long-term brand recognition is a goal.
+4. Pocketnow, while a frequent publisher, may offer better value for budget-conscious campaigns due to its smaller losses when factoring in campaign costs.
+
+The top 3 channels to form collaborations with are Austin Evans, iJustine, and KenTT based on their high visibility, engagement, and potential reach.
+
+## Potential ROI
+
+- What ROI do we expect if we take this course of action?
+
+1. A product placement campaign with Austin Evans could yield a net profit of $117,524 per video, offering excellent returns for high-exposure campaigns.
+2. Collaborating with iJustine for influencer marketing could result in a net profit of $94,507 per video, making this another valuable option for maximizing reach.
+3. Partnering with KenTT for a highly engaged audience might not yield the highest immediate net profit, but it could lead to strong brand loyalty and long-term value.
+
+## Action plan
+
+- What course of action should we take and why?
+
+Based on our analysis, we recommend moving forward with a long-term partnership deal with Austin Evans to promote the client's products, as this channel offers the highest potential visibility and ROI.
+
+We'll keep iJustine and KenTT as secondary options to target specific audiences, focusing on high engagement and consistent reach.
+
+- What steps do we take to implement the recommended decisions effectively?
+
+1. Reach out to the teams behind Austin Evans, iJustine, and KenTT to initiate partnership discussions.
+2. Negotiate contracts within the allocated budget for each campaign and finalize details.
+3. Launch the campaigns, track their performance using agreed-upon KPIs, and monitor conversions closely.
+
+
 
 
