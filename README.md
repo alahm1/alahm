@@ -362,3 +362,403 @@ VAR totalSubscribers = DIVIDE(sumOfSubscribers, million)
 RETURN totalSubscribers
 ```
 
+### 1. Total Views (B)
+
+```dax
+Total Views (B) = 
+VAR billion = 1000000000
+VAR sumOfTotalViews = SUM(view_us_youtubers[total_views])
+VAR totalViews = DIVIDE(sumOfTotalViews, billion)
+RETURN totalViews
+```
+
+### 3. Total Videos
+
+```dax
+Total Videos = 
+VAR totalVideos = SUM(view_us_youtubers[total_videos])
+RETURN totalVideos
+```
+
+### 4. Average Views Per Video (K)
+
+```dax
+Avg Views per Video (K) = 
+VAR sumOfTotalViews = SUM(view_us_youtubers[total_views])
+VAR sumOfTotalVideos = SUM(view_us_youtubers[total_videos])
+VAR avgViewsPerVideo = DIVIDE(sumOfTotalViews, sumOfTotalVideos, BLANK())
+VAR finalAvgViewsPerVideo = DIVIDE(avgViewsPerVideo,1000, BLANK())
+RETURN finalAvgViewsPerVideo
+```
+
+
+### 5. Subscriber Engagement Rate
+
+```dax
+Subscriber Engagement Rate = 
+VAR sumOfTotalSubscribers = SUM(view_us_youtubers[total_subscribers])
+VAR sumOfTotalVideos = SUM(view_us_youtubers[total_videos])
+VAR subscriberEngRate = DIVIDE(sumOfTotalSubscribers, sumOfTotalVideos, BLANK())
+RETURN subscriberEngRate
+```
+
+### 6. Views Per Subscriber
+
+```dax
+Views Per Subscriber = 
+VAR sumOfTotalVIews = SUM(view_us_youtubers[total_views])
+VAR sumOfTotalSubscribers = SUM(view_us_youtubers[total_subscribers])
+VAR viewsPerSubscriber = DIVIDE(sumOfTotalVIews,sumOfTotalSubscribers,BLANK())
+RETURN viewsPerSubscriber
+```
+
+# Analysis
+
+
+## Findings
+
+- What did we find?
+
+For this analysis, we're going to focus on the questions below to get the information we need for our marketing client -
+
+Here are the key questions we need to answer for our marketing client:
+
+Who are the top 10 YouTubers with the most subscribers?
+Which 3 channels have uploaded the most videos?
+Which 3 channels have the most views?
+Which 3 channels have the highest average views per video?
+Which 3 channels have the highest views per subscriber ratio?
+Which 3 channels have the highest subscriber engagement rate per video uploaded?
+
+
+### Who are the top 10 YouTubers with the most subscribers?
+
+
+| Rank | Channel Name     | Subscribers (M) |
+|------|------------------|------------------|
+| 1    | iJustine         | 7.10M            |
+| 2    | Austin Evans     | 5.57M            |
+| 3    | NetworkChuck     | 4.19M            |
+| 4    | TechSource       | 3.82M            |
+| 5    | Think Media      | 3.06M            |
+| 6    | Snazzy Labs      | 2.13M            |
+| 7    | Flossy Carter    | 2.02M            |
+| 8    | The Crusher      | 1.96M            |
+| 9    | KenTT            | 1.93M            |
+| 10   | Pocketnow        | 1.82M            |
+
+
+### Which 3 channels have uploaded the most videos?
+
+| Rank | Channel Name     | Videos Uploaded    |
+|------|------------------|--------------------|
+| 1    | Nikias Molina     | 19,781            |
+| 2    | TecH College      | 9,683             |
+| 3    | Pocketnow         | 7,972             |
+
+
+### Which 3 channels have the most views?
+
+| Rank | Channel Name     | Total Views (B)     |
+|------|------------------|---------------------|
+| 1    | Austin Evans      | 1.485              |
+| 2    | iJustine          | 1.465              |
+| 3    | TechSource        | 0.813              |
+
+
+### Which 3 channels have the highest average views per video?
+
+| Channel Name      | Average Views per Video (M)    |
+|--------------------|------------------------------ |
+| Terry Lee White     | 3.53    		     |
+| iLuvTrading         | 2.23      		     |
+| Sky Creative HD     | 2.14                         |
+
+
+### 5. Which 3 channels have the highest views per subscriber ratio?
+
+| Rank | Channel Name          | Views per Subscriber      |
+|------|-----------------------|---------------------------|
+| 1    | Top 10 Zone           | 558.80  	           | 
+| 2    | Internet Today        | 549.01  		   |
+| 3    | This is Tech Today    | 548.75 		   |
+
+
+### 6. Which 3 channels have the highest subscriber engagement rate per video uploaded?
+
+| Rank | Channel Name        | Subscriber Engagement Rate   |
+|------|---------------------|------------------------------|
+| 1    | KenTT               | 42,888.89 		    |
+| 2    | Terry Lee White     | 42,454.55 		    |
+| 3    | Moment              | 18,095.24 		    |
+
+
+# Notes
+
+For this analysis, we'll prioritize analysing the metrics that are important in generating the expected ROI for our marketing client, which are the YouTube channels wuth the most
+
+- subscribers
+- total views
+- videos uploaded
+
+## Validation
+
+### 1. Youtubers with the most subscribers
+
+#### Calculation breakdown
+
+Campaign idea = product placement
+
+
+
+1. Justine
+   
+-Average views per video: 572,540
+- Product cost: $10
+- Potential units sold per video: 572,540 x 2% conversion rate = 11,450.8 units sold
+- Potential revenue per video: 11,450.8 x $10 = $114,508
+- Campaign cost (one-time fee): $20,000
+- **Net profit: $114,508 - $20,000 = $94,508**
+
+2. Austin Evans
+  
+- Average views per video: 687,620
+- Product cost: $10
+- Potential units sold per video: 687,620 x 2% conversion rate = 13,752.4 units sold
+- Potential revenue per video: 13,752.4 x $10 = $137,524
+- Campaign cost (one-time fee): $20,000
+- **Net profit: $137,524 - $20,000 = $117,524**
+
+3. NetworkChuck
+- Average views per video: 630,010
+- Product cost: $10
+- Potential units sold per video: 630,010 x 2% conversion rate = 12,600.2 units sold
+- Potential revenue per video: 12,600.2 x $10 = $126,002
+- Campaign cost (one-time fee): $20,000
+- **Net profit: $126,002 - $20,000 = $106,002**
+
+Best option from category: Austin Evans
+
+#### SQL query
+
+```sql
+/* 
+
+# 1. Define variables 
+# 2. Create a CTE that rounds the average views per video 
+# 3. Select the column you need and create calculated columns from existing ones 
+# 4. Filter results by Youtube channels
+# 5. Sort results by net profits (from highest to lowest)
+
+*/
+
+--1. 
+DECLARE @conversionRate FLOAT = 0.02; -- The conversion rate @ 2%
+DECLARE @productCost MONEY = 10.0; -- The product cost @ $10
+DECLARE @campaignCost FLOAT = 20000; --The campaign cost @ $20,000
+
+--2. 
+
+WITH channelData AS (
+	SELECT 
+	channel_name,
+	total_subscribers,
+	total_views,
+	total_videos,
+	ROUND((CAST(total_views AS FLOAT) / total_videos), -1) AS rounded_avg_views_per_video
+	
+	
+	FROM youtube_db.dbo.view_us_youtubers_2024 
+)
+
+SELECT 
+	channel_name,
+	rounded_avg_views_per_video,
+	ROUND(rounded_avg_views_per_video * @conversionRate, 0) AS potential_units_sold_per_video,
+	(rounded_avg_views_per_video * @conversionRate * @productCost) as potential_revenue_per_video,
+	(rounded_avg_views_per_video * @conversionRate * @productCost) - @campaignCost as net_profit
+FROM
+	channelData
+
+--4. 
+WHERE
+	channel_name IN ('iJustine', 'Austin Evans','NetworkChuck')
+
+--5.
+ORDER BY
+total_subscribers desc
+```
+
+
+#### Output
+![sql_calculations](assets/images/sql_calculations.png)
+
+
+
+### 2. Youtubers with the most videos uploaded
+\
+### Calculation breakdown
+
+Campaign idea = sponsored video series
+
+1. Nikias Molina
+
+- Average views per video: 3,862
+- Potential units sold per video: 77
+- Potential revenue per video: $772
+- Campaign cost: $20,000
+- **Net profit: -$19,228 (loss)**
+
+2. TecH College
+
+- Average views per video: 19,344
+- Potential units sold per video: 387
+- Potential revenue per video: $3,869
+- Campaign cost: $20,000
+- **Net profit: -$16,131 (loss)**
+
+3. Pocketnow
+   
+- Average views per video: 97,806
+- Potential units sold per video: 1,956
+- Potential revenue per video: $19,561
+- Campaign cost: $20,000
+- **Net profit: -$439 (loss)**
+
+Best Option rom category : Pocketnow (Lowest loss: -$439)
+
+# SQL query
+
+```sql
+/*
+
+1. Define our variables
+2. Create a CTE that rounds the average views per video
+3. Select the columns that are appropriate for analysis
+4. Filter the results by the Youtube channels with the highest subscriber bases
+5. Order by net_profit (from highest to lowest)
+
+*/
+
+--1. 
+DECLARE @conversionRate FLOAT = 0.02; -- The conversion rate @ 2%
+DECLARE @productCost MONEY = 10.0; -- The product cost @ $10
+DECLARE @campaignCost FLOAT = 20000; --The campaign cost @ $20,000
+
+--2.
+
+WITH channelData AS (
+	SELECT 
+	channel_name,
+	total_subscribers,
+	total_views,
+	total_videos,
+	ROUND((CAST(total_views AS FLOAT) / total_videos), -1) AS rounded_avg_views_per_video
+	
+	
+	FROM youtube_db.dbo.view_us_youtubers_2024 
+)
+
+SELECT 
+	channel_name,
+	rounded_avg_views_per_video,
+	ROUND(rounded_avg_views_per_video * @conversionRate, 0) AS potential_units_sold_per_video,
+	(rounded_avg_views_per_video * @conversionRate * @productCost) as potential_revenue_per_video,
+	(rounded_avg_views_per_video * @conversionRate * @productCost) - @campaignCost as net_profit
+FROM
+	channelData
+
+--4. 
+WHERE
+	channel_name IN ('Nikias Molina','TecH College','Pocketnow')
+
+--5.
+ORDER BY
+total_subscribers desc
+```
+
+
+#### Output
+![youtubers_with_the_most_videos](assets/images/youtubers_with_the_most_videos.png)
+
+
+### 3. Youtubers with the Most Views
+   
+Campaign Idea: Influencer marketing
+
+1. Austin Evans
+- Average views per video: 687,621
+- Potential units sold per video: 13,752
+- Potential revenue per video: $137,524
+- Campaign cost: $20,000
+- Net profit: $117,524
+  
+2. iJustine
+- Average views per video: 572,537
+- Potential units sold per video: 11,451
+- Potential revenue per video: $114,507
+- Campaign cost: $20,000
+- Net profit: $94,507
+  
+3. TechSource
+- Average views per video: 477,699
+- Potential units sold per video: 9,554
+- Potential revenue per video: $95,540
+- Campaign cost: $20,000
+- Net profit: $75,540
+
+Best Option: Austin Evans (Highest net profit: $117,524)
+
+# SQL query
+```sql
+/*
+
+1. Define our variables
+2. Create a CTE that rounds the average views per video
+3. Select the columns that are appropriate for analysis
+4. Filter the results by the Youtube channels with the highest subscriber bases
+5. Order by net_profit (from highest to lowest)
+
+*/
+
+--1. 
+DECLARE @conversionRate FLOAT = 0.02; -- The conversion rate @ 2%
+DECLARE @productCost MONEY = 10.0; -- The product cost @ $10
+DECLARE @campaignCost FLOAT = 20000; --The campaign cost @ $20,000
+
+--2.
+
+WITH channelData AS (
+	SELECT 
+	channel_name,
+	total_subscribers,
+	total_views,
+	total_videos,
+	ROUND((CAST(total_views AS FLOAT) / total_videos), -1) AS rounded_avg_views_per_video
+	
+	
+	FROM youtube_db.dbo.view_us_youtubers_2024 
+)
+
+SELECT 
+	channel_name,
+	rounded_avg_views_per_video,
+	ROUND(rounded_avg_views_per_video * @conversionRate, 0) AS potential_units_sold_per_video,
+	(rounded_avg_views_per_video * @conversionRate * @productCost) as potential_revenue_per_video,
+	(rounded_avg_views_per_video * @conversionRate * @productCost) - @campaignCost as net_profit
+FROM
+	channelData
+
+--4. 
+WHERE
+	channel_name IN ('Austin Evans', 'iJustine','TechSource')
+
+--5.
+ORDER BY
+total_subscribers desc
+```
+
+#### Output
+![youtubers_with_the_most_views](assets/images/youtubers_with_the_most_views.png)
+
+
