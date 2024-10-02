@@ -40,7 +40,7 @@
 
 - What is the key pain point?
 
-  The Head of Marketing wants to find the top 100 US-based technology YouTubers in 2024 to decide which YouTubers would be best for running marketing campaigns throughout the rest of the year. As this is their first foray into YouTube marketing, they plan to start with a moderate budget, focusing on channels with fewer than 10,000 subscribers within the technology influencer space.
+  The Head of Marketing wants to find the top 100 US-based technology YouTubers in 2024 to decide which YouTubers would be best for running marketing campaigns throughout the rest of the year. As this is their first foray into YouTube marketing, they plan to start with a moderate budget, focusing on channels with fewer than 10m subscribers within the technology influencer space.
 
 - What is the ideal solution?  
 
