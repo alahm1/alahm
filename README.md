@@ -40,7 +40,7 @@
 
 - What is the key pain point?
 
-  The Head of Marketing wants to find the top 100 US-based technology YouTubers in 2024 to decide which YouTubers would be best for running marketing campaigns throughout the rest of the year.
+  The Head of Marketing wants to find the top 100 US-based technology YouTubers in 2024 to decide which YouTubers would be best for running marketing campaigns throughout the rest of the year. As this is their first foray into YouTube marketing, they plan to start with a moderate budget, focusing on channels with fewer than 10,000 subscribers within the technology influencer space.
 
 - What is the ideal solution?  
 
@@ -64,7 +64,7 @@ With this information, I can make more informed decisions about which YouTubers 
 
 What data is needed to achieve our objective?
 
-To achieve our objective, we require data on the top UK YouTubers in 2024, which includes:
+To achieve our objective, we require data on the top US tech YouTubers in 2024, which includes:
 
 - Channel names
 - Total subscribers
@@ -83,7 +83,7 @@ Where is the data coming from? The data has been compiled from various websites 
 
 ## Design
 
-## Dashboard Components Required
+### Dashboard Components Required
 What should the dashboard contain based on the requirements provided? 
 
 To understand what it should include, we need to figure out what questions we need the dashboard to answer:
