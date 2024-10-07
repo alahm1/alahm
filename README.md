@@ -71,7 +71,7 @@ To achieve our objective, we require data on the top US tech YouTubers in 2024, 
 - Total views
 - Total videos uploaded
 
-Where is the data coming from? The data has been compiled from various websites that track YouTube metrics and analytics. 
+Where is the data coming from? The data has been compiled from various websites that track YouTube metrics and analytics. A Python script was employed to scrape the top 100 technology YouTube channels in the US. Additionally, the YouTube API was utilized to extract key metrics, including views, subscriber counts, and video details for each channel.
 
 # Stages
 
