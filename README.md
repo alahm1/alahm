@@ -253,7 +253,7 @@ Here are the data quality tests conducted:
 SELECT
     COUNT(*) AS no_of_rows
 FROM
-    view_uk_youtubers_2024;
+    view_us_youtubers_2024;
 ```
 ### Output
 ![row_count_check](assets/images/row_count_check.png)
